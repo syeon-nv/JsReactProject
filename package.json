@@ -4,8 +4,10 @@
   "description": "## 깃연습용 프로젝트",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "lint": "eslint .",
+    "prettier": "prettier .",
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
   },
   "repository": {
     "type": "git",
