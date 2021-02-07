@@ -23,7 +23,7 @@ const BoxMaker = () => {
   return (
     <>
       <Input onChange={handleColor} />
-      <Box>daslf</Box>
+      <Box>Box1</Box>
     </>
   )
 }
