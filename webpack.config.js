@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve(__dirname, './src'),
+  entry: path.resolve(__dirname, './src/index.js'),
   output: {
     filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -11,19 +11,18 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
         use: 'babel-loader',
+        exclude: /node_modules/,
       },
     ],
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.css'],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
-      showErrors: true,
     }),
   ],
   devServer: {
@@ -31,5 +30,6 @@ module.exports = {
     inline: true,
     hot: true,
     open: true,
+    historyApiFallback: true,
   },
 }
